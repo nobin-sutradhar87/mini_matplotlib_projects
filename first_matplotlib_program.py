@@ -1,16 +1,26 @@
 import matplotlib
-matplotlib.use('TkAgg')  # or 'Qt5Agg', depending on your system
+# Only force backend if your default is broken (optional)
+ matplotlib.use('TkAgg')   # or 'Qt5Agg'
+
 import matplotlib.pyplot as plt
 
+# Data
 num = [1, 2, 3, 4, 5]
-num_squares = [1, 4, 9, 16, 25]
+num_squares = [n**2 for n in num]  # cleaner than hardcoding
 
+# Create figure + axes
 fig, ax = plt.subplots()
-ax.plot(num, num_squares, linewidth=3)
-ax.set_title("square number", fontsize=24)
 
-ax.set_xlabel("values", fontsize=24)
-ax.set_ylabel("squared number",fontsize=24)
+# Plot
+ax.plot(num, num_squares, linewidth=2)
 
-ax.tick_params(axis='both', labelsize=14)
+# Titles and labels
+ax.set_title("Square Numbers", fontsize=18)
+ax.set_xlabel("Value", fontsize=14)
+ax.set_ylabel("Squared Value", fontsize=14)
+
+# Ticks
+ax.tick_params(axis='both', labelsize=12)
+
+# Show
 plt.show()
