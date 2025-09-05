@@ -1,6 +1,6 @@
 import matplotlib
 # Only force backend if your default is broken (optional)
- matplotlib.use('TkAgg')   # or 'Qt5Agg'
+matplotlib.use('TkAgg')   # or 'Qt5Agg'
 
 import matplotlib.pyplot as plt
 
